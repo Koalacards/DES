@@ -148,7 +148,7 @@ x_binary = hex_to_bin(x)
 L0, R0 = [], []
 
 
-#Using the Initial Permuation, get L0 and R0
+#Using the Initial Permutation, get L0 and R0
 for num in IP_L:
     L0.append(x_binary[num - 1])
 
@@ -157,6 +157,7 @@ for num in IP_R:
 
 L_prev, R_prev = L0, R0
 
+#Start the loop to get all the L and R values up to L16 and R16
 for i in range(1, 17):
 
     E_Ri = []
@@ -198,7 +199,7 @@ for i in range(1, 17):
         C+= S_value_str
 
         
-    #Finally, use the permuation table to get P(C)
+    #Finally, use the permutation table to get P(C)
 
     P_C = []
 
@@ -221,7 +222,7 @@ for i in range(1, 17):
     #L(i) = R(i-1)
     L_i = R_prev
 
-    #Set L(i) and R(i) as L(i-1) and R(i-1) for the next loop
+    #Set L(i) and R(i) as L(i-1) and R(i-1) for the next iteration of the loop
     L_prev, R_prev = L_i, R_i
 
 
